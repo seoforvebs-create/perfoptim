@@ -1,0 +1,116 @@
+/* ============================================================
+   PerfOptim — Hero & Homepage-specific styles (home.css)
+   ============================================================ */
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0D0D1A 0%, #1A1A3E 100%);
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  padding-top: var(--nav-height);
+}
+
+/* Floating particles */
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.hero-particles span {
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  opacity: 0.4;
+  animation: float-up 14s linear infinite;
+}
+
+.hero-particles span:nth-child(1) { left: 8%;  width: 6px;  height: 6px;  animation-duration: 16s; animation-delay: 0s; }
+.hero-particles span:nth-child(2) { left: 20%; width: 12px; height: 12px; animation-duration: 20s; animation-delay: 2s; background: var(--color-secondary); }
+.hero-particles span:nth-child(3) { left: 33%; width: 8px;  height: 8px;  animation-duration: 13s; animation-delay: 4s; }
+.hero-particles span:nth-child(4) { left: 45%; width: 14px; height: 14px; animation-duration: 22s; animation-delay: 1s; }
+.hero-particles span:nth-child(5) { left: 57%; width: 6px;  height: 6px;  animation-duration: 17s; animation-delay: 3s; background: var(--color-secondary); }
+.hero-particles span:nth-child(6) { left: 66%; width: 10px; height: 10px; animation-duration: 19s; animation-delay: 5s; }
+.hero-particles span:nth-child(7) { left: 75%; width: 7px;  height: 7px;  animation-duration: 15s; animation-delay: 2.5s; }
+.hero-particles span:nth-child(8) { left: 84%; width: 12px; height: 12px; animation-duration: 23s; animation-delay: 0.5s; }
+.hero-particles span:nth-child(9) { left: 92%; width: 9px;  height: 9px;  animation-duration: 18s; animation-delay: 4.5s; background: var(--color-secondary); }
+.hero-particles span:nth-child(10){ left: 50%; width: 5px;  height: 5px;  animation-duration: 12s; animation-delay: 6s; }
+
+@keyframes float-up {
+  0%   { transform: translateY(110vh) scale(0.6); opacity: 0; }
+  10%  { opacity: 0.5; }
+  90%  { opacity: 0.5; }
+  100% { transform: translateY(-10vh) scale(1.1); opacity: 0; }
+}
+
+.hero-split {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h1 { color: #fff; margin: 20px 0 22px; }
+.hero-content > p { color: rgba(255, 255, 255, 0.78); font-size: 1.15rem; max-width: 620px; }
+.hero-ctas { display: flex; gap: 16px; margin: 32px 0 28px; flex-wrap: wrap; }
+.trust-badges { font-size: 0.85rem; color: rgba(255, 255, 255, 0.55); letter-spacing: 0.02em; }
+
+/* Animated dashboard card */
+.hero-visual { display: flex; justify-content: center; }
+
+.dash-card {
+  width: 100%;
+  max-width: 360px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  position: relative;
+  animation: floaty 5s ease-in-out infinite;
+}
+
+.dash-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-lg);
+  padding: 2px;
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.dash-head { display: flex; align-items: center; gap: 6px; margin-bottom: 22px; }
+.dash-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+.dash-dot:nth-child(1){ background:#FF6584; } .dash-dot:nth-child(2){ background:#FBBF24; } .dash-dot:nth-child(3){ background:#16A34A; }
+.dash-title { margin-left: auto; font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+
+.dash-metric { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.dash-metric span { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+.dash-metric strong { font-size: 1.15rem; }
+.dash-metric strong.up { color: #4ADE80; }
+.dash-metric strong.down { color: #FF6584; }
+
+.dash-bars { display: flex; align-items: flex-end; gap: 8px; height: 90px; margin-top: 22px; }
+.dash-bars span {
+  flex: 1;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-secondary));
+  border-radius: 4px 4px 0 0;
+  animation: grow-bar 1.4s ease-out forwards;
+  transform-origin: bottom;
+}
+@keyframes grow-bar { from { transform: scaleY(0); } to { transform: scaleY(1); } }
