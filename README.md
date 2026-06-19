@@ -24,7 +24,9 @@ marketing agency targeting the US market globally and India at `/in/`.
 - ✅ 4-column footer with newsletter + social + geo line
 - ✅ JSON-LD schema: Organization, WebSite (SearchAction), BreadcrumbList, Service, FAQPage
 - ✅ Full meta tags per page: unique title/description/keywords, canonical, Open Graph, Twitter, hreflang
-- ✅ `sitemap.xml` (30 URLs, prioritized) + `robots.txt`
+- ✅ **1,380 programmatic location pages** at `/{state}/{city}/{service}/` (24 states × cities × 12 services), each with localized H1/title/meta, varied intro copy, LocalBusiness + Service + FAQPage + BreadcrumbList schema, and internal links to nearby cities & other services
+- ✅ Root-level `generate.js` — run `node generate.js` to (re)build the entire location matrix
+- ✅ `sitemap.xml` (1,410 URLs, prioritized) + `robots.txt`
 - ✅ SVG favicon; lazy-loaded images; font preconnect; deferred JS
 
 ## Functional Entry URIs
