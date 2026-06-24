@@ -382,7 +382,11 @@ function toFile(parts = []) {
 }
 
 function addSitemap(bucket, parts, priority = "0.8", changefreq = "monthly") {
-  sitemaps[bucket].push({ url: toUrl(parts), priority, changefreq, lastmod: TODAY });
+  if (Array.isArray(bucket)) {
+    bucket.push({ url: parts, priority, changefreq, lastmod: TODAY });
+  } else {
+    sitemaps[bucket].push({ url: toUrl(parts), priority, changefreq, lastmod: TODAY });
+  }
 }
 
 function esc(value = "") {
