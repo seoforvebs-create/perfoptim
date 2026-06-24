@@ -1131,7 +1131,7 @@ function generateWikiPage(person) {
     ]
   };
 
-  const relatedEntityLinks = person.relatedEntities
+  const relatedEntityLinks = (person.relatedEntities || [])
     .map(e => `<li><a href="/entity/${e}/">${e.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a></li>`)
     .join('\n            ');
 
