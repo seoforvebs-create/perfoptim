@@ -417,5 +417,1147 @@ function footerHtml() {
     <footer>
       <div class="wrap footer-grid">
         <div>
-          <stdiv>
-          <st
+          <div class="footer-brand">
+            <img src="https://perfoptim.com/wp-content/uploads/2024/11/perfoptim-logo-1-1024x576.png" 
+                 alt="Perfoptim Logo" width="160" height="90" loading="lazy"/>
+            <p>Perfoptim Labs LLP — Performance Digital Marketing Agency. Serving USA, India, Canada and beyond.</p>
+            <div class="footer-social">
+              <a href="https://www.linkedin.com/company/perfoptim/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              </a>
+              <a href="https://www.instagram.com/perfoptim/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              </a>
+              <a href="https://www.facebook.com/perfoptim/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+              </a>
+              <a href="https://x.com/perfoptim" target="_blank" rel="noopener noreferrer" aria-label="Twitter/X">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.213 5.567 5.95-5.567Zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3>Top Services</h3>
+          <ul>
+            <li><a href="/seo-services/">SEO Services</a></li>
+            <li><a href="/ppc-advertising/">PPC Advertising</a></li>
+            <li><a href="/lead-generation/">Lead Generation</a></li>
+            <li><a href="/web-design-development/">Web Design & Development</a></li>
+            <li><a href="/performance-marketing/">Performance Marketing</a></li>
+            <li><a href="/content-marketing/">Content Marketing</a></li>
+            <li><a href="/social-media-marketing/">Social Media Marketing</a></li>
+            <li><a href="/cro-services/">CRO Services</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Regions</h3>
+          <ul>
+            <li><a href="/">USA Digital Marketing</a></li>
+            <li><a href="/in/">India Digital Marketing</a></li>
+            <li><a href="/ca/">Canada Digital Marketing</a></li>
+            <li><a href="/in/uttar-pradesh/bareilly/seo-services/">SEO in Bareilly</a></li>
+            <li><a href="/in/maharashtra/mumbai/seo-services/">SEO in Mumbai</a></li>
+            <li><a href="/california/los-angeles/seo-services/">SEO in Los Angeles</a></li>
+            <li><a href="/ca/ontario/toronto/seo-services/">SEO in Toronto</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Knowledge Base</h3>
+          <ul>
+            <li><a href="/entity/search-engine-optimization/">What is SEO?</a></li>
+            <li><a href="/entity/performance-marketing/">What is Performance Marketing?</a></li>
+            <li><a href="/entity/lead-generation/">What is Lead Generation?</a></li>
+            <li><a href="/entity/google-ads/">What is Google Ads?</a></li>
+            <li><a href="/wiki/neil-patel/">Neil Patel Wiki</a></li>
+            <li><a href="/wiki/rand-fishkin/">Rand Fishkin Wiki</a></li>
+            <li><a href="/wiki/sachin-saxena-perfoptim/">Sachin Saxena — Perfoptim</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>📍 35G/9, Rampur Garden, Bareilly, UP 243001</li>
+            <li>📞 <a href="tel:+919105948249">+91 91059 48249</a></li>
+            <li>✉️ <a href="mailto:info@perfoptim.com">info@perfoptim.com</a></li>
+            <li>🏢 GST: 09ABFFP4536J1ZW</li>
+          </ul>
+          <div class="footer-trust">
+            <span>⭐ 4.8/5 Google Rating</span>
+            <span>👥 50+ Clients</span>
+            <span>📅 15+ Years Experience</span>
+            <span>🌍 USA | India | Canada</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="wrap">
+          <p>© ${new Date().getFullYear()} Perfoptim Labs LLP. All rights reserved. 
+             GST: 09ABFFP4536J1ZW | 
+             <a href="/privacy-policy/">Privacy Policy</a> | 
+             <a href="/terms-of-service/">Terms of Service</a> |
+             <a href="/sitemap-index.xml">Sitemap</a>
+          </p>
+        </div>
+      </div>
+    </footer>`;
+}
+
+// ─── ORGANIZATION SCHEMA (Global — har page mein inject hoga) ────────────────
+function orgSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://perfoptim.com/#organization",
+    "name": "Perfoptim",
+    "legalName": "Perfoptim Labs LLP",
+    "url": "https://perfoptim.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://perfoptim.com/wp-content/uploads/2024/11/perfoptim-logo-1-1024x576.png",
+      "width": 1024,
+      "height": 576
+    },
+    "foundingDate": "2009",
+    "founder": {
+      "@type": "Person",
+      "name": "Sachin Saxena",
+      "@id": "https://perfoptim.com/wiki/sachin-saxena-perfoptim/#person"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "35G/9, behind Dr. Rashmi Goel Clinic, Rampur Garden",
+      "addressLocality": "Bareilly",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "243001",
+      "addressCountry": "IN"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+91-91059-48249",
+        "contactType": "customer service",
+        "areaServed": ["IN", "US", "CA"],
+        "availableLanguage": ["English", "Hindi"]
+      }
+    ],
+    "email": "info@perfoptim.com",
+    "telephone": "+91-91059-48249",
+    "taxID": "09ABFFP4536J1ZW",
+    "numberOfEmployees": { "@type": "QuantitativeValue", "value": 10 },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "100",
+      "bestRating": "5"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/perfoptim/",
+      "https://www.instagram.com/perfoptim/",
+      "https://www.facebook.com/perfoptim/",
+      "https://x.com/perfoptim"
+    ],
+    "areaServed": [
+      { "@type": "Country", "name": "India" },
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "Canada" }
+    ],
+    "knowsAbout": [
+      "Search Engine Optimization",
+      "Performance Marketing",
+      "Lead Generation",
+      "Web Design and Development",
+      "PPC Advertising",
+      "Content Marketing"
+    ]
+  };
+}
+
+// ─── LOCAL BUSINESS SCHEMA (India office ke liye) ────────────────────────────
+function localBusinessSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService", "MarketingAgency"],
+    "@id": "https://perfoptim.com/#localbusiness",
+    "name": "Perfoptim",
+    "image": "https://perfoptim.com/wp-content/uploads/2024/11/perfoptim-logo-1-1024x576.png",
+    "url": "https://perfoptim.com",
+    "telephone": "+91-91059-48249",
+    "email": "info@perfoptim.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "35G/9, behind Dr. Rashmi Goel Clinic, Rampur Garden",
+      "addressLocality": "Bareilly",
+      "addressRegion": "Uttar Pradesh",
+      "postalCode": "243001",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "28.3670",
+      "longitude": "79.4304"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.8",
+      "reviewCount": "100",
+      "bestRating": "5"
+    },
+    "priceRange": "₹₹",
+    "currenciesAccepted": "INR, USD, CAD",
+    "paymentAccepted": "Bank Transfer, UPI, Credit Card"
+  };
+}
+
+// ─── PERSON SCHEMA — Sachin Saxena (Founder) ─────────────────────────────────
+function founderSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://perfoptim.com/wiki/sachin-saxena-perfoptim/#person",
+    "name": "Sachin Saxena",
+    "jobTitle": "Founder & CEO",
+    "worksFor": {
+      "@type": "Organization",
+      "@id": "https://perfoptim.com/#organization"
+    },
+    "url": "https://perfoptim.com/wiki/sachin-saxena-perfoptim/",
+    "sameAs": [
+      "https://www.linkedin.com/company/perfoptim/",
+      "https://x.com/perfoptim"
+    ],
+    "knowsAbout": [
+      "Digital Marketing", "SEO", "Performance Marketing",
+      "Lead Generation", "Web Development", "AI SEO"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bareilly",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "IN"
+    }
+  };
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ████████████  ENTITY PAGES — /entity/  ███████████████████████
+// ═══════════════════════════════════════════════════════════════
+
+const ENTITY_CONCEPTS = [
+  // SEO
+  { slug: 'search-engine-optimization', name: 'Search Engine Optimization', alt: 'SEO',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services','content-marketing','orm-services'],
+    relatedEntities: ['technical-seo','on-page-seo','off-page-seo','backlink','google-algorithm'],
+    relatedWiki: ['rand-fishkin','brian-dean','neil-patel'] },
+  { slug: 'technical-seo', name: 'Technical SEO', alt: 'Technical Search Optimization',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services','web-design-development'],
+    relatedEntities: ['search-engine-optimization','core-web-vitals','schema-markup','canonical-url'],
+    relatedWiki: ['rand-fishkin','barry-schwartz'] },
+  { slug: 'on-page-seo', name: 'On-Page SEO', alt: 'On-Site SEO',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services','content-marketing'],
+    relatedEntities: ['search-engine-optimization','technical-seo','anchor-text','schema-markup'],
+    relatedWiki: ['brian-dean','neil-patel'] },
+  { slug: 'off-page-seo', name: 'Off-Page SEO', alt: 'Off-Site SEO',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services','orm-services'],
+    relatedEntities: ['search-engine-optimization','backlink','domain-authority','anchor-text'],
+    relatedWiki: ['rand-fishkin','brian-dean'] },
+  { slug: 'local-seo', name: 'Local SEO', alt: 'Local Search Optimization',
+    wikidata: 'Q180711', wikipedia: 'Local_search_(Internet)',
+    relatedServices: ['seo-services','google-my-business-india'],
+    relatedEntities: ['search-engine-optimization','schema-markup','knowledge-graph'],
+    relatedWiki: ['neil-patel','joy-hawkins'] },
+  { slug: 'e-e-a-t', name: 'E-E-A-T', alt: 'Experience Expertise Authoritativeness Trustworthiness',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services','content-marketing','orm-services'],
+    relatedEntities: ['search-engine-optimization','knowledge-graph','entity-seo'],
+    relatedWiki: ['barry-schwartz','rand-fishkin'] },
+  { slug: 'core-web-vitals', name: 'Core Web Vitals', alt: 'CWV Google',
+    wikidata: 'Q180711', wikipedia: 'Core_Web_Vitals',
+    relatedServices: ['seo-services','web-design-development','cro-services'],
+    relatedEntities: ['technical-seo','search-engine-optimization'],
+    relatedWiki: ['barry-schwartz','sundar-pichai'] },
+  { slug: 'google-algorithm', name: 'Google Algorithm', alt: 'Google Search Algorithm',
+    wikidata: 'Q233267', wikipedia: 'Google_Search',
+    relatedServices: ['seo-services','orm-services'],
+    relatedEntities: ['search-engine-optimization','e-e-a-t','core-web-vitals','pagerank'],
+    relatedWiki: ['barry-schwartz','sundar-pichai','rand-fishkin'] },
+  { slug: 'pagerank', name: 'PageRank', alt: 'Google PageRank Algorithm',
+    wikidata: 'Q180711', wikipedia: 'PageRank',
+    relatedServices: ['seo-services'],
+    relatedEntities: ['search-engine-optimization','backlink','domain-authority','google-algorithm'],
+    relatedWiki: ['sundar-pichai','rand-fishkin'] },
+  { slug: 'domain-authority', name: 'Domain Authority', alt: 'DA Moz Metric',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services','orm-services'],
+    relatedEntities: ['backlink','pagerank','search-engine-optimization'],
+    relatedWiki: ['rand-fishkin','brian-dean'] },
+  { slug: 'backlink', name: 'Backlink', alt: 'Inbound Link Back Link',
+    wikidata: 'Q846637', wikipedia: 'Backlink',
+    relatedServices: ['seo-services','content-marketing'],
+    relatedEntities: ['off-page-seo','domain-authority','anchor-text','pagerank'],
+    relatedWiki: ['brian-dean','rand-fishkin'] },
+  { slug: 'anchor-text', name: 'Anchor Text', alt: 'Link Anchor Text SEO',
+    wikidata: 'Q180711', wikipedia: 'Anchor_text',
+    relatedServices: ['seo-services','content-marketing'],
+    relatedEntities: ['backlink','on-page-seo','off-page-seo'],
+    relatedWiki: ['brian-dean'] },
+  { slug: 'schema-markup', name: 'Schema Markup', alt: 'Structured Data Schema.org',
+    wikidata: 'Q180711', wikipedia: 'Schema.org',
+    relatedServices: ['seo-services','web-design-development'],
+    relatedEntities: ['technical-seo','knowledge-graph','entity-seo','local-seo'],
+    relatedWiki: ['barry-schwartz','rand-fishkin'] },
+  { slug: 'knowledge-graph', name: 'Knowledge Graph', alt: 'Google Knowledge Graph',
+    wikidata: 'Q5283767', wikipedia: 'Knowledge_Graph',
+    relatedServices: ['seo-services','orm-services'],
+    relatedEntities: ['entity-seo','schema-markup','e-e-a-t'],
+    relatedWiki: ['sundar-pichai','barry-schwartz'] },
+  { slug: 'entity-seo', name: 'Entity SEO', alt: 'Entity Based SEO',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services','content-marketing'],
+    relatedEntities: ['knowledge-graph','schema-markup','e-e-a-t','search-engine-optimization'],
+    relatedWiki: ['rand-fishkin','barry-schwartz'] },
+  { slug: 'hreflang', name: 'Hreflang', alt: 'Hreflang Tag International SEO',
+    wikidata: 'Q180711', wikipedia: 'Hreflang',
+    relatedServices: ['seo-services'],
+    relatedEntities: ['technical-seo','search-engine-optimization'],
+    relatedWiki: ['aleyda-solis'] },
+  { slug: 'canonical-url', name: 'Canonical URL', alt: 'Canonical Tag SEO',
+    wikidata: 'Q180711', wikipedia: 'Canonical_link_element',
+    relatedServices: ['seo-services','web-design-development'],
+    relatedEntities: ['technical-seo','search-engine-optimization'],
+    relatedWiki: ['barry-schwartz','rand-fishkin'] },
+  // Marketing
+  { slug: 'performance-marketing', name: 'Performance Marketing', alt: 'Performance Based Marketing',
+    wikidata: 'Q1344251', wikipedia: 'Performance_marketing',
+    relatedServices: ['performance-marketing','ppc-advertising','lead-generation'],
+    relatedEntities: ['cost-per-click','cost-per-lead','return-on-ad-spend','marketing-funnel'],
+    relatedWiki: ['neil-patel','gary-vaynerchuk'] },
+  { slug: 'cost-per-click', name: 'Cost Per Click', alt: 'CPC Pay Per Click',
+    wikidata: 'Q180711', wikipedia: 'Pay-per-click',
+    relatedServices: ['ppc-advertising','performance-marketing'],
+    relatedEntities: ['performance-marketing','return-on-ad-spend','google-ads'],
+    relatedWiki: ['larry-kim','neil-patel'] },
+  { slug: 'cost-per-lead', name: 'Cost Per Lead', alt: 'CPL Lead Generation Cost',
+    wikidata: 'Q180711', wikipedia: 'Performance_marketing',
+    relatedServices: ['lead-generation','ppc-advertising'],
+    relatedEntities: ['performance-marketing','marketing-funnel','cost-per-click'],
+    relatedWiki: ['neil-patel','gary-vaynerchuk'] },
+  { slug: 'return-on-ad-spend', name: 'Return on Ad Spend', alt: 'ROAS',
+    wikidata: 'Q180711', wikipedia: 'Return_on_advertising_spend',
+    relatedServices: ['ppc-advertising','performance-marketing'],
+    relatedEntities: ['cost-per-click','cost-per-lead','performance-marketing'],
+    relatedWiki: ['larry-kim','neil-patel'] },
+  { slug: 'conversion-rate-optimization', name: 'Conversion Rate Optimization', alt: 'CRO',
+    wikidata: 'Q180711', wikipedia: 'Conversion_rate_optimization',
+    relatedServices: ['cro-services','web-design-development','ppc-advertising'],
+    relatedEntities: ['marketing-funnel','cost-per-lead','performance-marketing'],
+    relatedWiki: ['neil-patel','rand-fishkin'] },
+  { slug: 'customer-acquisition-cost', name: 'Customer Acquisition Cost', alt: 'CAC',
+    wikidata: 'Q180711', wikipedia: 'Customer_acquisition_cost',
+    relatedServices: ['performance-marketing','lead-generation'],
+    relatedEntities: ['cost-per-lead','return-on-ad-spend','marketing-funnel'],
+    relatedWiki: ['neil-patel'] },
+  { slug: 'marketing-funnel', name: 'Marketing Funnel', alt: 'Sales Funnel Digital Marketing',
+    wikidata: 'Q180711', wikipedia: 'Purchase_funnel',
+    relatedServices: ['lead-generation','content-marketing','email-marketing'],
+    relatedEntities: ['conversion-rate-optimization','cost-per-lead','performance-marketing'],
+    relatedWiki: ['neil-patel','gary-vaynerchuk'] },
+  { slug: 'lead-generation', name: 'Lead Generation', alt: 'B2B Lead Gen',
+    wikidata: 'Q180711', wikipedia: 'Lead_generation',
+    relatedServices: ['lead-generation','ppc-advertising','content-marketing'],
+    relatedEntities: ['marketing-funnel','cost-per-lead','conversion-rate-optimization'],
+    relatedWiki: ['neil-patel','gary-vaynerchuk'] },
+  { slug: 'content-marketing', name: 'Content Marketing', alt: 'Content Strategy',
+    wikidata: 'Q3283817', wikipedia: 'Content_marketing',
+    relatedServices: ['content-marketing','seo-services','email-marketing'],
+    relatedEntities: ['search-engine-optimization','marketing-funnel','lead-generation'],
+    relatedWiki: ['brian-dean','neil-patel','gary-vaynerchuk'] },
+  { slug: 'email-marketing', name: 'Email Marketing', alt: 'Email Campaign Marketing',
+    wikidata: 'Q1344251', wikipedia: 'Email_marketing',
+    relatedServices: ['email-marketing','content-marketing','lead-generation'],
+    relatedEntities: ['marketing-funnel','lead-generation','conversion-rate-optimization'],
+    relatedWiki: ['neil-patel','gary-vaynerchuk'] },
+  { slug: 'social-media-marketing', name: 'Social Media Marketing', alt: 'SMM',
+    wikidata: 'Q180711', wikipedia: 'Social_media_marketing',
+    relatedServices: ['social-media-marketing','content-marketing','branding-design'],
+    relatedEntities: ['content-marketing','influencer-marketing','marketing-funnel'],
+    relatedWiki: ['gary-vaynerchuk','neil-patel'] },
+  { slug: 'influencer-marketing', name: 'Influencer Marketing', alt: 'Influencer Campaign',
+    wikidata: 'Q180711', wikipedia: 'Influencer_marketing',
+    relatedServices: ['social-media-marketing','branding-design'],
+    relatedEntities: ['social-media-marketing','content-marketing','branding'],
+    relatedWiki: ['gary-vaynerchuk'] },
+  // Tools
+  { slug: 'google-ads', name: 'Google Ads', alt: 'Google AdWords PPC',
+    wikidata: 'Q3340699', wikipedia: 'Google_Ads',
+    relatedServices: ['ppc-advertising','performance-marketing','lead-generation'],
+    relatedEntities: ['cost-per-click','return-on-ad-spend','performance-marketing'],
+    relatedWiki: ['sundar-pichai','larry-kim','neil-patel'] },
+  { slug: 'google-analytics-4', name: 'Google Analytics 4', alt: 'GA4',
+    wikidata: 'Q180711', wikipedia: 'Google_Analytics',
+    relatedServices: ['seo-services','performance-marketing','cro-services'],
+    relatedEntities: ['conversion-rate-optimization','google-ads','search-engine-optimization'],
+    relatedWiki: ['sundar-pichai','barry-schwartz'] },
+  { slug: 'google-search-console', name: 'Google Search Console', alt: 'GSC Webmaster Tools',
+    wikidata: 'Q180711', wikipedia: 'Google_Search_Console',
+    relatedServices: ['seo-services'],
+    relatedEntities: ['search-engine-optimization','technical-seo','core-web-vitals'],
+    relatedWiki: ['barry-schwartz','rand-fishkin'] },
+  { slug: 'semrush', name: 'SEMrush', alt: 'Semrush SEO Tool',
+    wikidata: 'Q180711', wikipedia: 'Semrush',
+    relatedServices: ['seo-services','content-marketing'],
+    relatedEntities: ['search-engine-optimization','backlink','domain-authority'],
+    relatedWiki: ['neil-patel','rand-fishkin'] },
+  { slug: 'ahrefs', name: 'Ahrefs', alt: 'Ahrefs SEO Backlink Tool',
+    wikidata: 'Q180711', wikipedia: 'Ahrefs',
+    relatedServices: ['seo-services'],
+    relatedEntities: ['backlink','domain-authority','search-engine-optimization'],
+    relatedWiki: ['brian-dean','rand-fishkin'] },
+  { slug: 'meta-ads', name: 'Meta Ads', alt: 'Facebook Ads Instagram Ads',
+    wikidata: 'Q380057', wikipedia: 'Meta_Platforms',
+    relatedServices: ['social-media-marketing','performance-marketing','lead-generation'],
+    relatedEntities: ['social-media-marketing','cost-per-click','return-on-ad-spend'],
+    relatedWiki: ['gary-vaynerchuk','neil-patel'] },
+  // Business
+  { slug: 'digital-marketing-agency', name: 'Digital Marketing Agency', alt: 'Online Marketing Agency',
+    wikidata: 'Q1344251', wikipedia: 'Digital_marketing',
+    relatedServices: ['seo-services','ppc-advertising','lead-generation'],
+    relatedEntities: ['performance-marketing','search-engine-optimization','content-marketing'],
+    relatedWiki: ['sachin-saxena-perfoptim','neil-patel'] },
+  { slug: 'seo-agency', name: 'SEO Agency', alt: 'Search Engine Optimization Agency',
+    wikidata: 'Q180711', wikipedia: 'Search_engine_optimization',
+    relatedServices: ['seo-services'],
+    relatedEntities: ['search-engine-optimization','digital-marketing-agency'],
+    relatedWiki: ['sachin-saxena-perfoptim','rand-fishkin'] },
+  { slug: 'white-label-seo', name: 'White Label SEO', alt: 'Reseller SEO',
+    wikidata: 'Q180711', wikipedia: 'White-label_product',
+    relatedServices: ['seo-services','lead-generation'],
+    relatedEntities: ['seo-agency','digital-marketing-agency'],
+    relatedWiki: ['neil-patel'] },
+  { slug: 'b2b-marketing', name: 'B2B Marketing', alt: 'Business to Business Marketing',
+    wikidata: 'Q180711', wikipedia: 'Business-to-business',
+    relatedServices: ['lead-generation','content-marketing','email-marketing'],
+    relatedEntities: ['lead-generation','marketing-funnel','performance-marketing'],
+    relatedWiki: ['neil-patel','gary-vaynerchuk'] },
+  { slug: 'programmatic-advertising', name: 'Programmatic Advertising', alt: 'Programmatic Display Ads',
+    wikidata: 'Q180711', wikipedia: 'Programmatic_advertising',
+    relatedServices: ['ppc-advertising','performance-marketing'],
+    relatedEntities: ['cost-per-click','return-on-ad-spend','google-ads','meta-ads'],
+    relatedWiki: ['larry-kim','neil-patel'] },
+  { slug: 'branding', name: 'Branding', alt: 'Brand Identity Design',
+    wikidata: 'Q180711', wikipedia: 'Brand',
+    relatedServices: ['branding-design','social-media-marketing','content-marketing'],
+    relatedEntities: ['content-marketing','social-media-marketing','influencer-marketing'],
+    relatedWiki: ['gary-vaynerchuk','neil-patel'] },
+];
+
+// ─── ENTITY PAGE GENERATOR ────────────────────────────────────────────────────
+function generateEntityPage(entity) {
+  const schemaObj = {
+    "@context": "https://schema.org",
+    "@type": ["DefinedTerm", "Article"],
+    "@id": `https://perfoptim.com/entity/${entity.slug}/#definedterm`,
+    "name": entity.name,
+    "alternateName": entity.alt,
+    "description": `Complete guide to ${entity.name} — definition, how it works, best practices, and how Perfoptim uses it to drive results for clients.`,
+    "inDefinedTermSet": "https://perfoptim.com/entity/",
+    "sameAs": [
+      `https://en.wikipedia.org/wiki/${entity.wikipedia}`,
+      `https://www.wikidata.org/wiki/${entity.wikidata}`
+    ],
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://perfoptim.com/entity/${entity.slug}/`
+    },
+    "publisher": { "@type": "Organization", "@id": "https://perfoptim.com/#organization" },
+    "author": { "@type": "Person", "@id": "https://perfoptim.com/wiki/sachin-saxena-perfoptim/#person" }
+  };
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": `What is ${entity.name}?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `${entity.name} (${entity.alt}) is a core digital marketing concept. It refers to the strategies and techniques used to improve online visibility and business results through ${entity.name.toLowerCase()}.` } },
+      { "@type": "Question", "name": `Why is ${entity.name} important for businesses?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `${entity.name} is critical because it directly impacts your online visibility, lead generation, and revenue. Businesses that invest in ${entity.name} see measurable improvements in traffic, conversions, and brand authority.` } },
+      { "@type": "Question", "name": `How does Perfoptim use ${entity.name}?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `Perfoptim integrates ${entity.name} into every client campaign. Our 15+ years of expertise and 50+ client base means we apply proven ${entity.name} strategies tailored to each business's market — whether in India, USA, or Canada.` } },
+      { "@type": "Question", "name": `How long does ${entity.name} take to show results?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `Results from ${entity.name} typically become visible within 60-90 days, with significant improvements at 6 months. Paid channels show faster results while organic ${entity.name} compounds over time.` } }
+    ]
+  };
+
+  const relatedServiceLinks = entity.relatedServices
+    .map(s => `<li><a href="/${s}/">${s.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a></li>`)
+    .join('\n            ');
+
+  const relatedEntityLinks = entity.relatedEntities
+    .map(e => `<li><a href="/entity/${e}/">${e.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a></li>`)
+    .join('\n            ');
+
+  const relatedWikiLinks = entity.relatedWiki
+    .map(w => `<li><a href="/wiki/${w}/">${w.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a></li>`)
+    .join('\n            ');
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>What is ${entity.name}? — Complete Guide 2026 | Perfoptim</title>
+  <meta name="description" content="What is ${entity.name}? Complete definition, how it works, best practices and real examples. Learn how ${entity.alt} drives business growth in 2026."/>
+  <link rel="canonical" href="https://perfoptim.com/entity/${entity.slug}/"/>
+  <link rel="alternate" hreflang="en" href="https://perfoptim.com/entity/${entity.slug}/"/>
+  <link rel="alternate" hreflang="x-default" href="https://perfoptim.com/entity/${entity.slug}/"/>
+  <script type="application/ld+json">${JSON.stringify(schemaObj, null, 2)}</script>
+  <script type="application/ld+json">${JSON.stringify(faqSchema, null, 2)}</script>
+  <script type="application/ld+json">${JSON.stringify(orgSchema(), null, 2)}</script>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+  ${headerHtml()}
+  <main>
+    <article class="entity-page">
+      <div class="wrap">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> › 
+          <a href="/entity/">Knowledge Base</a> › 
+          <span>${entity.name}</span>
+        </nav>
+
+        <header class="entity-header">
+          <span class="entity-badge">📚 Knowledge Base</span>
+          <h1>What is ${entity.name}? — Complete Guide (2026)</h1>
+          <p class="entity-alt">Also known as: <strong>${entity.alt}</strong></p>
+          <p class="entity-intro">
+            ${entity.name} is one of the most important concepts in modern digital marketing.
+            This guide covers everything — definition, how it works, best practices, tools, 
+            and how Perfoptim applies ${entity.alt} for clients across India, USA, and Canada.
+          </p>
+          <div class="entity-meta">
+            <span>✍️ By <a href="/wiki/sachin-saxena-perfoptim/">Sachin Saxena</a></span>
+            <span>📅 Updated: June 2026</span>
+            <span>⏱️ 8 min read</span>
+            <span>🔗 <a href="https://en.wikipedia.org/wiki/${entity.wikipedia}" target="_blank" rel="noopener noreferrer">Wikipedia Reference ↗</a></span>
+          </div>
+        </header>
+
+        <div class="entity-body">
+
+          <section>
+            <h2>Definition of ${entity.name}</h2>
+            <p>${entity.name} (commonly abbreviated as <strong>${entity.alt}</strong>) refers to the 
+            systematic approach of leveraging ${entity.name.toLowerCase()} strategies to improve a 
+            business's online presence, visibility, and revenue performance. It is a core component 
+            of modern digital marketing and is used by agencies, brands, and businesses worldwide.</p>
+            <p>According to <a href="https://en.wikipedia.org/wiki/${entity.wikipedia}" target="_blank" rel="noopener noreferrer nofollow">Wikipedia</a>, 
+            ${entity.name} has evolved significantly with the growth of search engines and digital 
+            platforms, becoming an essential discipline for any business competing online.</p>
+          </section>
+
+          <section>
+            <h2>How ${entity.name} Works</h2>
+            <p>${entity.name} works by combining technical implementation, content strategy, and 
+            performance analysis to achieve measurable business outcomes. The process typically 
+            involves research, strategy development, execution, and continuous optimization.</p>
+            <p>When implemented correctly, ${entity.alt} creates a compounding effect — 
+            early investments in ${entity.name.toLowerCase()} build long-term competitive advantages 
+            that are difficult for competitors to replicate quickly.</p>
+          </section>
+
+          <section>
+            <h2>Why ${entity.name} Matters in 2026</h2>
+            <p>In 2026, ${entity.name} is more important than ever. With AI-driven search, 
+            algorithm updates, and increased competition, businesses that invest in proper 
+            ${entity.alt} strategies see significantly better results than those relying on 
+            outdated approaches.</p>
+            <ul>
+              <li>Increased online visibility and brand awareness</li>
+              <li>Higher quality leads at lower cost per acquisition</li>
+              <li>Sustainable long-term competitive advantage</li>
+              <li>Better ROI compared to traditional marketing channels</li>
+              <li>Measurable, data-driven results with clear attribution</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2>${entity.name} Best Practices</h2>
+            <p>Perfoptim's 15+ years of experience across 50+ clients has helped us identify 
+            the most effective ${entity.alt} practices for businesses in India, USA, and Canada:</p>
+            <ol>
+              <li><strong>Start with a comprehensive audit</strong> — understand your current position before implementing any ${entity.name.toLowerCase()} strategy</li>
+              <li><strong>Set measurable KPIs</strong> — define what success looks like in concrete numbers</li>
+              <li><strong>Implement systematically</strong> — follow a structured approach rather than random tactics</li>
+              <li><strong>Monitor and optimize continuously</strong> — ${entity.alt} requires ongoing attention</li>
+              <li><strong>Align with business goals</strong> — every ${entity.name.toLowerCase()} decision should tie back to revenue</li>
+            </ol>
+          </section>
+
+          <section>
+            <h2>Common ${entity.name} Mistakes to Avoid</h2>
+            <ul>
+              <li>Ignoring data and making decisions based on assumptions</li>
+              <li>Focusing on vanity metrics instead of revenue-driving KPIs</li>
+              <li>Neglecting mobile users and page speed</li>
+              <li>Inconsistent implementation without a clear strategy</li>
+              <li>Not adapting to algorithm updates and industry changes</li>
+            </ul>
+          </section>
+
+          <section class="faq-section">
+            <h2>Frequently Asked Questions about ${entity.name}</h2>
+            <div class="faq-item">
+              <h3>What is ${entity.name}?</h3>
+              <p>${entity.name} (${entity.alt}) is a core digital marketing discipline focused on 
+              improving online visibility and business performance through strategic implementation 
+              of proven techniques and data-driven optimization.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Why is ${entity.name} important for businesses?</h3>
+              <p>${entity.name} directly impacts your online visibility, lead generation, and 
+              revenue. Businesses investing in ${entity.alt} see measurable improvements in 
+              traffic, conversions, and brand authority over time.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How does Perfoptim use ${entity.name}?</h3>
+              <p>Perfoptim integrates ${entity.name} into every client campaign. With 15+ years 
+              of expertise and a 4.8★ Google rating, we apply proven ${entity.alt} strategies 
+              tailored to each business's market in India, USA, or Canada.</p>
+            </div>
+            <div class="faq-item">
+              <h3>How long does ${entity.name} take to show results?</h3>
+              <p>Results typically become visible within 60-90 days, with significant improvements 
+              at 6 months. Paid channels show faster results while organic ${entity.alt} compounds 
+              over time for lasting impact.</p>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="entity-sidebar">
+
+          <div class="sidebar-box">
+            <h3>🔗 Related Services</h3>
+            <ul>${relatedServiceLinks}</ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>📚 Related Concepts</h3>
+            <ul>${relatedEntityLinks}</ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>👤 Expert Profiles</h3>
+            <ul>${relatedWikiLinks}</ul>
+          </div>
+
+          <div class="sidebar-cta">
+            <h3>Need ${entity.name} for Your Business?</h3>
+            <p>Perfoptim has helped 50+ businesses with ${entity.alt} across India, USA & Canada.</p>
+            <a href="/#contact" class="btn-primary">Get Free Audit →</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </article>
+  </main>
+  ${footerHtml()}
+</body>
+</html>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// █████████████████  WIKI PAGES — /wiki/  ██████████████████████
+// ═══════════════════════════════════════════════════════════════
+
+const WIKI_PEOPLE = [
+  { slug: 'sachin-saxena-perfoptim',
+    name: 'Sachin Saxena', role: 'Founder & CEO, Perfoptim',
+    nationality: 'Indian', city: 'Bareilly', country: 'India',
+    known_for: 'AI SEO, Performance Marketing, Lead Generation',
+    organization: 'Perfoptim Labs LLP',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://www.linkedin.com/company/perfoptim/','https://x.com/perfoptim'],
+    relatedEntities: ['search-engine-optimization','performance-marketing','lead-generation','entity-seo','digital-marketing-agency'],
+    relatedWiki: ['neil-patel','rand-fishkin','brian-dean'],
+    isPrimary: true,
+    bio: `Sachin Saxena is the Founder and CEO of Perfoptim Labs LLP, a performance digital marketing agency headquartered in Bareilly, Uttar Pradesh, India. With over 15 years of experience in digital marketing, Sachin has helped 50+ businesses across India, USA, and Canada achieve measurable growth through SEO, performance marketing, and lead generation strategies. Perfoptim under his leadership has earned a 4.8★ Google rating and serves clients globally.` },
+  { slug: 'neil-patel',
+    name: 'Neil Patel', role: 'Digital Marketing Expert & Entrepreneur',
+    nationality: 'American-British', city: 'Seattle', country: 'USA',
+    known_for: 'NeilPatel.com, Ubersuggest, KISSmetrics, Crazy Egg',
+    organization: 'NP Digital',
+    wikidata: 'Q6989690', wikipedia: 'Neil_Patel_(entrepreneur)',
+    sameAs: ['https://en.wikipedia.org/wiki/Neil_Patel_(entrepreneur)','https://twitter.com/neilpatel','https://www.linkedin.com/in/neilkpatel','https://www.wikidata.org/wiki/Q6989690'],
+    relatedEntities: ['search-engine-optimization','content-marketing','lead-generation','performance-marketing','conversion-rate-optimization'],
+    relatedWiki: ['rand-fishkin','brian-dean','gary-vaynerchuk','sachin-saxena-perfoptim'] },
+  { slug: 'rand-fishkin',
+    name: 'Rand Fishkin', role: 'SEO Expert & Moz Co-Founder',
+    nationality: 'American', city: 'Seattle', country: 'USA',
+    known_for: 'Moz, SparkToro, Whiteboard Friday',
+    organization: 'SparkToro',
+    wikidata: 'Q7292370', wikipedia: 'Rand_Fishkin',
+    sameAs: ['https://en.wikipedia.org/wiki/Rand_Fishkin','https://twitter.com/randfish','https://www.wikidata.org/wiki/Q7292370'],
+    relatedEntities: ['search-engine-optimization','domain-authority','e-e-a-t','backlink','seo-agency'],
+    relatedWiki: ['neil-patel','brian-dean','barry-schwartz','sachin-saxena-perfoptim'] },
+  { slug: 'brian-dean',
+    name: 'Brian Dean', role: 'SEO Expert & Backlinko Founder',
+    nationality: 'American', city: 'New York', country: 'USA',
+    known_for: 'Backlinko, Skyscraper Technique, YouTube SEO',
+    organization: 'Backlinko (acquired by Semrush)',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/BrianEDean','https://www.linkedin.com/in/brianedean'],
+    relatedEntities: ['search-engine-optimization','backlink','on-page-seo','off-page-seo','content-marketing'],
+    relatedWiki: ['rand-fishkin','neil-patel','barry-schwartz','sachin-saxena-perfoptim'] },
+  { slug: 'gary-vaynerchuk',
+    name: 'Gary Vaynerchuk', role: 'Entrepreneur, Marketing Expert & Author',
+    nationality: 'American', city: 'New York', country: 'USA',
+    known_for: 'VaynerMedia, Wine Library TV, #AskGaryVee',
+    organization: 'VaynerMedia',
+    wikidata: 'Q3100701', wikipedia: 'Gary_Vaynerchuk',
+    sameAs: ['https://en.wikipedia.org/wiki/Gary_Vaynerchuk','https://twitter.com/garyvee','https://www.wikidata.org/wiki/Q3100701'],
+    relatedEntities: ['social-media-marketing','content-marketing','influencer-marketing','branding','marketing-funnel'],
+    relatedWiki: ['neil-patel','larry-kim','sachin-saxena-perfoptim'] },
+  { slug: 'barry-schwartz',
+    name: 'Barry Schwartz', role: 'Search Engine News Reporter & SEO Expert',
+    nationality: 'American', city: 'New York', country: 'USA',
+    known_for: 'Search Engine Roundtable, Google Algorithm Updates Coverage',
+    organization: 'Search Engine Roundtable',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/rustybrick','https://www.seroundtable.com'],
+    relatedEntities: ['google-algorithm','search-engine-optimization','e-e-a-t','core-web-vitals','technical-seo'],
+    relatedWiki: ['rand-fishkin','neil-patel','sundar-pichai','sachin-saxena-perfoptim'] },
+  { slug: 'larry-kim',
+    name: 'Larry Kim', role: 'PPC Expert & WordStream Founder',
+    nationality: 'American', city: 'Boston', country: 'USA',
+    known_for: 'WordStream, MobileMonkey, Google Ads Strategy',
+    organization: 'MobileMonkey (Customers.ai)',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/larrykim','https://www.linkedin.com/in/larrykimboston'],
+    relatedEntities: ['google-ads','cost-per-click','return-on-ad-spend','performance-marketing','programmatic-advertising'],
+    relatedWiki: ['neil-patel','gary-vaynerchuk','sachin-saxena-perfoptim'] },
+  { slug: 'aleyda-solis',
+    name: 'Aleyda Solis', role: 'International SEO Expert & Consultant',
+    nationality: 'Costa Rican', city: 'Madrid', country: 'Spain',
+    known_for: 'International SEO, Hreflang, SEOFOMO Newsletter',
+    organization: 'Orainti',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/aleyda','https://www.aleydasolis.com','https://www.linkedin.com/in/aleydasolis'],
+    relatedEntities: ['hreflang','search-engine-optimization','technical-seo','e-e-a-t'],
+    relatedWiki: ['rand-fishkin','barry-schwartz','sachin-saxena-perfoptim'] },
+  { slug: 'sundar-pichai',
+    name: 'Sundar Pichai', role: 'CEO of Google & Alphabet',
+    nationality: 'Indian-American', city: 'Mountain View', country: 'USA',
+    known_for: 'Google CEO, Chrome, Google Drive, AI Strategy',
+    organization: 'Google LLC / Alphabet Inc.',
+    wikidata: 'Q562817', wikipedia: 'Sundar_Pichai',
+    sameAs: ['https://en.wikipedia.org/wiki/Sundar_Pichai','https://twitter.com/sundarpichai','https://www.wikidata.org/wiki/Q562817'],
+    relatedEntities: ['google-algorithm','google-ads','google-analytics-4','knowledge-graph','core-web-vitals'],
+    relatedWiki: ['barry-schwartz','rand-fishkin','sachin-saxena-perfoptim'] },
+  { slug: 'harsh-agrawal',
+    name: 'Harsh Agrawal', role: 'Blogger & Digital Marketing Expert (India)',
+    nationality: 'Indian', city: 'Delhi', country: 'India',
+    known_for: 'ShoutMeLoud, Blogging, Indian SEO Community',
+    organization: 'ShoutMeLoud',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/denharsh','https://www.shoutmeloud.com','https://www.linkedin.com/in/harshag'],
+    relatedEntities: ['search-engine-optimization','content-marketing','backlink','email-marketing'],
+    relatedWiki: ['neil-patel','sorav-jain','deepak-kanakaraju','sachin-saxena-perfoptim'] },
+  { slug: 'sorav-jain',
+    name: 'Sorav Jain', role: 'Social Media Expert & Digital Marketing Trainer (India)',
+    nationality: 'Indian', city: 'Chennai', country: 'India',
+    known_for: 'echoVME, Social Media Marketing India, Digital Scholar',
+    organization: 'echoVME Digital',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/soravjain','https://www.linkedin.com/in/soravjain','https://www.soravjain.com'],
+    relatedEntities: ['social-media-marketing','content-marketing','influencer-marketing','branding'],
+    relatedWiki: ['harsh-agrawal','deepak-kanakaraju','neil-patel','sachin-saxena-perfoptim'] },
+  { slug: 'deepak-kanakaraju',
+    name: 'Deepak Kanakaraju', role: 'Digital Marketing Expert & Educator (India)',
+    nationality: 'Indian', city: 'Bangalore', country: 'India',
+    known_for: 'Digital Deepak, Digital Marketing Mastery Course',
+    organization: 'PixelTrack',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/deepakkanakaraju','https://www.digitaldeepak.com','https://www.linkedin.com/in/deepakkanakaraju'],
+    relatedEntities: ['content-marketing','email-marketing','marketing-funnel','performance-marketing'],
+    relatedWiki: ['harsh-agrawal','sorav-jain','neil-patel','sachin-saxena-perfoptim'] },
+  { slug: 'joy-hawkins',
+    name: 'Joy Hawkins', role: 'Local SEO Expert',
+    nationality: 'Canadian', city: 'Toronto', country: 'Canada',
+    known_for: 'Sterling Sky, Local Search Forum, Google Business Profile',
+    organization: 'Sterling Sky Inc.',
+    wikidata: null, wikipedia: null,
+    sameAs: ['https://twitter.com/JoyanneHawkins','https://www.linkedin.com/in/joyannelaw'],
+    relatedEntities: ['local-seo','search-engine-optimization','google-algorithm','schema-markup'],
+    relatedWiki: ['barry-schwartz','rand-fishkin','sachin-saxena-perfoptim'] },
+];
+
+// ─── WIKI PAGE GENERATOR ──────────────────────────────────────────────────────
+function generateWikiPage(person) {
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `https://perfoptim.com/wiki/${person.slug}/#person`,
+    "name": person.name,
+    "jobTitle": person.role,
+    "nationality": person.nationality,
+    "url": `https://perfoptim.com/wiki/${person.slug}/`,
+    "sameAs": person.sameAs || [],
+    "knowsAbout": person.relatedEntities.map(e => e.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())),
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://perfoptim.com/wiki/${person.slug}/`
+    }
+  };
+  if (person.wikidata) {
+    personSchema.sameAs.push(`https://www.wikidata.org/wiki/${person.wikidata}`);
+  }
+  if (person.organization) {
+    personSchema.worksFor = { "@type": "Organization", "name": person.organization };
+  }
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": `Who is ${person.name}?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `${person.name} is a ${person.role} known for ${person.known_for}. Based in ${person.city}, ${person.country}.` } },
+      { "@type": "Question", "name": `What is ${person.name} known for?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `${person.name} is known for ${person.known_for} and has significantly contributed to the digital marketing industry.` } },
+      { "@type": "Question", "name": `Where is ${person.name} from?`,
+        "acceptedAnswer": { "@type": "Answer", "text": `${person.name} is ${person.nationality}, based in ${person.city}, ${person.country}.` } },
+    ]
+  };
+
+  const relatedEntityLinks = person.relatedEntities
+    .map(e => `<li><a href="/entity/${e}/">${e.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a></li>`)
+    .join('\n            ');
+
+  const relatedWikiLinks = person.relatedWiki
+    .map(w => `<li><a href="/wiki/${w}/">${w.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a></li>`)
+    .join('\n            ');
+
+  const outboundLink = person.wikipedia
+    ? `<a href="https://en.wikipedia.org/wiki/${person.wikipedia}" target="_blank" rel="noopener noreferrer nofollow">Wikipedia ↗</a>`
+    : '';
+
+  const bioText = person.bio || `${person.name} is a renowned ${person.role} based in ${person.city}, ${person.country}. Known for ${person.known_for}, ${person.name.split(' ')[0]} has made significant contributions to the digital marketing industry. Their work with ${person.organization} has influenced countless marketers and businesses worldwide.`;
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>${person.name} — Wiki, Career & Digital Marketing Profile | Perfoptim</title>
+  <meta name="description" content="${person.name} — ${person.role}. Known for ${person.known_for}. Complete profile, career, expertise, and digital marketing contributions."/>
+  <link rel="canonical" href="https://perfoptim.com/wiki/${person.slug}/"/>
+  <link rel="alternate" hreflang="en" href="https://perfoptim.com/wiki/${person.slug}/"/>
+  <script type="application/ld+json">${JSON.stringify(personSchema, null, 2)}</script>
+  <script type="application/ld+json">${JSON.stringify(faqSchema, null, 2)}</script>
+  <script type="application/ld+json">${JSON.stringify(orgSchema(), null, 2)}</script>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+  ${headerHtml()}
+  <main>
+    <article class="wiki-page">
+      <div class="wrap">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Home</a> › 
+          <a href="/wiki/">Wiki</a> › 
+          <span>${person.name}</span>
+        </nav>
+
+        <header class="wiki-header">
+          <span class="wiki-badge">👤 Wiki Profile</span>
+          <h1>${person.name} — ${person.role}</h1>
+          <div class="wiki-meta">
+            <span>🌍 ${person.city}, ${person.country}</span>
+            <span>🏢 ${person.organization}</span>
+            <span>🎯 ${person.known_for}</span>
+            ${outboundLink ? `<span>${outboundLink}</span>` : ''}
+          </div>
+        </header>
+
+        <div class="wiki-body">
+
+          <section>
+            <h2>Who is ${person.name}?</h2>
+            <p>${bioText}</p>
+          </section>
+
+          <section>
+            <h2>${person.name}'s Expertise & Contributions</h2>
+            <p>${person.name} is widely recognized in the digital marketing community for 
+            contributions to ${person.known_for}. Their methodologies and frameworks have been 
+            adopted by agencies and marketers worldwide, including the team at Perfoptim.</p>
+            <ul>
+              ${person.relatedEntities.slice(0,4).map(e => 
+                `<li><a href="/entity/${e}/">${e.replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase())}</a> — area of expertise</li>`
+              ).join('\n              ')}
+            </ul>
+          </section>
+
+          <section>
+            <h2>${person.name} Key Achievements</h2>
+            <p>Over the course of their career, ${person.name} has built a reputation as one of 
+            the most trusted voices in digital marketing. Their work at ${person.organization} 
+            has set industry benchmarks that continue to influence best practices today.</p>
+          </section>
+
+          <section>
+            <h2>Digital Marketing Philosophy</h2>
+            <p>${person.name}'s approach to digital marketing centers on data-driven decisions, 
+            audience-first strategies, and measurable results. These principles align closely with 
+            how Perfoptim operates — every campaign is rooted in real data and tied to business outcomes.</p>
+          </section>
+
+          <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+              <h3>Who is ${person.name}?</h3>
+              <p>${person.name} is a ${person.role} known for ${person.known_for}.</p>
+            </div>
+            <div class="faq-item">
+              <h3>What is ${person.name} known for?</h3>
+              <p>${person.name} is known for ${person.known_for} and their significant contributions to the digital marketing industry.</p>
+            </div>
+            <div class="faq-item">
+              <h3>Where is ${person.name} based?</h3>
+              <p>${person.name} is based in ${person.city}, ${person.country}.</p>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="wiki-sidebar">
+
+          <div class="sidebar-box profile-card">
+            <h3>📋 Quick Facts</h3>
+            <table>
+              <tr><th>Name</th><td>${person.name}</td></tr>
+              <tr><th>Role</th><td>${person.role}</td></tr>
+              <tr><th>Organization</th><td>${person.organization}</td></tr>
+              <tr><th>Location</th><td>${person.city}, ${person.country}</td></tr>
+              <tr><th>Nationality</th><td>${person.nationality}</td></tr>
+              <tr><th>Known For</th><td>${person.known_for}</td></tr>
+            </table>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>📚 Areas of Expertise</h3>
+            <ul>${relatedEntityLinks}</ul>
+          </div>
+
+          <div class="sidebar-box">
+            <h3>👥 Related Profiles</h3>
+            <ul>${relatedWikiLinks}</ul>
+          </div>
+
+          <div class="sidebar-cta">
+            <h3>Work With Perfoptim</h3>
+            <p>Apply the same strategies used by industry leaders. 50+ clients, 4.8★ Google rating.</p>
+            <a href="/#contact" class="btn-primary">Get Free Audit →</a>
+          </div>
+
+        </aside>
+
+      </div>
+    </article>
+  </main>
+  ${footerHtml()}
+</body>
+</html>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ████████  ENTITY & WIKI BUILD FUNCTIONS  █████████████████████
+// ═══════════════════════════════════════════════════════════════
+
+function buildEntityPages(sitemapArr) {
+  console.log('\n📚 Building Entity pages...');
+  const OUT = './';
+  const BASE = 'https://perfoptim.com';
+
+  // Entity index page
+  const entityIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Marketing Knowledge Base — Concepts & Definitions | Perfoptim</title>
+  <meta name="description" content="Complete digital marketing knowledge base. Definitions, guides, and explanations for every SEO, PPC, and marketing concept. By Perfoptim."/>
+  <link rel="canonical" href="https://perfoptim.com/entity/"/>
+  <script type="application/ld+json">${JSON.stringify(orgSchema(), null, 2)}</script>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+  ${headerHtml()}
+  <main>
+    <div class="wrap">
+      <h1>Digital Marketing Knowledge Base</h1>
+      <p>Complete definitions, guides, and explanations for every major digital marketing concept. 
+         Built by the Perfoptim team with 15+ years of industry experience.</p>
+      <div class="entity-grid">
+        ${ENTITY_CONCEPTS.map(e => `
+        <a href="/entity/${e.slug}/" class="entity-card">
+          <h2>${e.name}</h2>
+          <p>${e.alt}</p>
+        </a>`).join('')}
+      </div>
+    </div>
+  </main>
+  ${footerHtml()}
+</body>
+</html>`;
+
+  writeFile(`${OUT}entity/index.html`, entityIndexHtml);
+  addSitemap(sitemapArr, `${BASE}/entity/`, '0.8');
+
+  ENTITY_CONCEPTS.forEach(entity => {
+    writeFile(`${OUT}entity/${entity.slug}/index.html`, generateEntityPage(entity));
+    addSitemap(sitemapArr, `${BASE}/entity/${entity.slug}/`, '0.8');
+  });
+
+  console.log(`  ✅ Entity pages done: ${ENTITY_CONCEPTS.length + 1} pages`);
+}
+
+function buildWikiPages(sitemapArr) {
+  console.log('\n👤 Building Wiki pages...');
+  const OUT = './';
+  const BASE = 'https://perfoptim.com';
+
+  // Wiki index page
+  const wikiIndexHtml = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Marketing Experts Wiki — Profiles & Bios | Perfoptim</title>
+  <meta name="description" content="Wiki profiles of top digital marketing experts, SEO leaders, and industry figures. Career bios, achievements, and contributions. By Perfoptim."/>
+  <link rel="canonical" href="https://perfoptim.com/wiki/"/>
+  <script type="application/ld+json">${JSON.stringify(orgSchema(), null, 2)}</script>
+  <link rel="stylesheet" href="/assets/style.css"/>
+</head>
+<body>
+  ${headerHtml()}
+  <main>
+    <div class="wrap">
+      <h1>Digital Marketing Experts — Wiki Profiles</h1>
+      <p>In-depth profiles of the world's leading digital marketing experts, SEO pioneers, 
+         and industry innovators — curated by the Perfoptim team.</p>
+      <div class="wiki-grid">
+        ${WIKI_PEOPLE.map(p => `
+        <a href="/wiki/${p.slug}/" class="wiki-card ${p.isPrimary ? 'wiki-card-primary' : ''}">
+          <h2>${p.name}</h2>
+          <p>${p.role}</p>
+          <span>${p.city}, ${p.country}</span>
+        </a>`).join('')}
+      </div>
+    </div>
+  </main>
+  ${footerHtml()}
+</body>
+</html>`;
+
+  writeFile(`${OUT}wiki/index.html`, wikiIndexHtml);
+  addSitemap(sitemapArr, `${BASE}/wiki/`, '0.8');
+
+  WIKI_PEOPLE.forEach(person => {
+    writeFile(`${OUT}wiki/${person.slug}/index.html`, generateWikiPage(person));
+    addSitemap(sitemapArr, `${BASE}/wiki/${person.slug}/`, '0.8');
+  });
+
+  console.log(`  ✅ Wiki pages done: ${WIKI_PEOPLE.length + 1} pages`);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ████████████  HEADER HTML  ███████████████████████════════════
+// ═══════════════════════════════════════════════════════════════
+
+function headerHtml() {
+  return `<header class="site-header">
+    <div class="wrap header-inner">
+      <a href="/" class="logo-link" aria-label="Perfoptim Home">
+        <img src="https://perfoptim.com/wp-content/uploads/2024/11/perfoptim-logo-1-1024x576.png"
+             alt="Perfoptim Logo" width="140" height="79" loading="eager"/>
+      </a>
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul>
+          <li><a href="/seo-services/">SEO</a></li>
+          <li><a href="/ppc-advertising/">PPC</a></li>
+          <li><a href="/lead-generation/">Lead Gen</a></li>
+          <li><a href="/web-design-development/">Web Design</a></li>
+          <li><a href="/entity/">Knowledge Base</a></li>
+          <li><a href="/wiki/">Wiki</a></li>
+          <li><a href="/in/">India</a></li>
+          <li><a href="/ca/">Canada</a></li>
+        </ul>
+      </nav>
+      <a href="/#contact" class="btn-primary header-cta">Free Audit →</a>
+    </div>
+  </header>`;
+}
+
+// ═══════════════════════════════════════════════════════════════
+// ████████████████  ENTRY POINT  ███████████████════════════════
+// ═══════════════════════════════════════════════════════════════
+
+console.log('╔══════════════════════════════════════════════════╗');
+console.log('║  PERFOPTIM — MASTER PROGRAMMATIC SEO GENERATOR  ║');
+console.log('║  USA + India + Canada + Entity + Wiki            ║');
+console.log('╚══════════════════════════════════════════════════╝');
+
+const startTime = Date.now();
+
+// Shared entity + wiki sitemap
+const sitemapShared = [];
+
+if (RUN_USA)    buildUSA();
+if (RUN_INDIA)  buildIndia();
+if (RUN_CANADA) buildCanada();
+
+// Entity + Wiki always build (shared across all regions)
+buildEntityPages(sitemapShared);
+buildWikiPages(sitemapShared);
+
+// Write shared sitemap
+fs.writeFileSync(
+  './sitemap-entity-wiki.xml',
+  buildSitemapXml(sitemapShared, 'https://perfoptim.com'),
+  'utf8'
+);
+entries.push(`  <sitemap><loc>https://perfoptim.com/sitemap-entity-wiki.xml</loc><lastmod>2026-06-24</lastmod></sitemap>`);
+buildSitemapIndex();
+
+const secs = ((Date.now() - startTime) / 1000).toFixed(1);
+console.log('\n╔══════════════════════════════════════════════════╗');
+console.log(`║  ✅ BUILD COMPLETE in ${secs}s`);
+console.log(`║  📄 Total pages: ${totalPages.toLocaleString()}`);
+console.log(`║  🇺🇸  USA URLs:    ${sitemapUSA.length}`);
+console.log(`║  🇮🇳  India URLs:  ${sitemapIndia.length}`);
+console.log(`║  🇨🇦  Canada URLs: ${sitemapCanada.length}`);
+console.log(`║  📚 Entity URLs:  ${ENTITY_CONCEPTS.length + 1}`);
+console.log(`║  👤 Wiki URLs:    ${WIKI_PEOPLE.length + 1}`);
+console.log('╚══════════════════════════════════════════════════╝');
