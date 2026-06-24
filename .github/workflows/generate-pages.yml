@@ -21,8 +21,17 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Run generator
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run USA generator
         run: node generate.js
+
+      - name: Run India generator
+        run: node generate-india.js
+
+      - name: Run Canada generator
+        run: node generate-canada.js
 
       - name: Commit and push generated pages
         run: |
