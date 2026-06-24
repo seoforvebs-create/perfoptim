@@ -1,0 +1,10 @@
+{
+  "name": "perfoptim-seo-generator",
+  "version": "1.0.0",
+  "description": "Programmatic SEO page generator for perfoptim.com",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js && node generate-india.js && node generate-canada.js"
+  },
+  "dependencies": {}
+}
