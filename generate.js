@@ -1402,40 +1402,277 @@ function headerHtml() {
 // ████████████████  ENTRY POINT  ███████████████════════════════
 // ═══════════════════════════════════════════════════════════════
 
+// ═══════════════════════════════════════════════════════════════
+// ████████████  BUILD FUNCTIONS  ███════════════════════════════
+// ═══════════════════════════════════════════════════════════════
+
+function buildSitemapXml(urls) {
+  const entries = urls.map(u => `  <url>
+    <loc>${u.url}</loc>
+    <lastmod>${u.lastmod || TODAY}</lastmod>
+    <changefreq>${u.changefreq || 'monthly'}</changefreq>
+    <priority>${u.priority || '0.8'}</priority>
+  </url>`).join('\n');
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>`;
+}
+
+function buildSitemapIndex(usaUrls, indiaUrls, canadaUrls, sharedUrls) {
+  const files = [];
+  if (usaUrls && usaUrls.length) {
+    fs.writeFileSync('./sitemap-usa.xml', buildSitemapXml(usaUrls), 'utf8');
+    files.push(`  <sitemap><loc>${SITE_URL}/sitemap-usa.xml</loc><lastmod>${TODAY}</lastmod></sitemap>`);
+  }
+  if (indiaUrls && indiaUrls.length) {
+    fs.mkdirSync('./in', { recursive: true });
+    fs.writeFileSync('./in/sitemap.xml', buildSitemapXml(indiaUrls), 'utf8');
+    files.push(`  <sitemap><loc>${SITE_URL}/in/sitemap.xml</loc><lastmod>${TODAY}</lastmod></sitemap>`);
+  }
+  if (canadaUrls && canadaUrls.length) {
+    fs.mkdirSync('./ca', { recursive: true });
+    fs.writeFileSync('./ca/sitemap.xml', buildSitemapXml(canadaUrls), 'utf8');
+    files.push(`  <sitemap><loc>${SITE_URL}/ca/sitemap.xml</loc><lastmod>${TODAY}</lastmod></sitemap>`);
+  }
+  if (sharedUrls && sharedUrls.length) {
+    fs.writeFileSync('./sitemap-entity-wiki.xml', buildSitemapXml(sharedUrls), 'utf8');
+    files.push(`  <sitemap><loc>${SITE_URL}/sitemap-entity-wiki.xml</loc><lastmod>${TODAY}</lastmod></sitemap>`);
+  }
+  fs.writeFileSync('./sitemap-index.xml',
+    `<?xml version="1.0" encoding="UTF-8"?>\n<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${files.join('\n')}\n</sitemapindex>`,
+    'utf8');
+  console.log(`  🗺️  Sitemap index: ${files.length} sitemaps`);
+}
+
+function generateServicePage({ service, industry, location, city, prefix = '', region = 'usa' }) {
+  const industryLabel = industry ? ` for ${industry.name}` : '';
+  const locationLabel = city
+    ? ` in ${city.name}, ${location ? location.abbr || location.name : ''}`
+    : (location ? ` in ${location.name}` : '');
+  const title = `${service.name}${industryLabel}${locationLabel} | Perfoptim`;
+  const h1 = `${service.name}${industryLabel}${locationLabel}`;
+  const urlParts = prefix
+    ? [prefix, location?.slug, city?.slug, industry ? `${service.slug}-for-${industry.slug}` : service.slug]
+    : [location?.slug, city?.slug, industry ? `${service.slug}-for-${industry.slug}` : service.slug];
+  const canonical = toUrl(urlParts);
+  const relatedEntities = (SERVICE_ENTITY_MAP[service.slug] || []).slice(0, 4);
+  const entityLinks = relatedEntities.map(e => {
+    const ent = ENTITY_TOPICS.find(x => x.slug === e);
+    return ent ? `<a href="/entity/${ent.slug}/">${ent.name}</a>` : '';
+  }).filter(Boolean).join(' · ');
+
+  const breadcrumbs = [
+    `<a href="/">Home</a>`,
+    prefix ? `<a href="/${prefix}/">${prefix.toUpperCase()}</a>` : null,
+    location ? `<a href="${prefix ? '/'+prefix : ''}/${location.slug}/">${location.name}</a>` : null,
+    city ? `<a href="${prefix ? '/'+prefix : ''}/${location?.slug}/${city.slug}/">${city.name}</a>` : null,
+    `<span>${service.name}${industry ? ' for '+industry.name : ''}</span>`
+  ].filter(Boolean).join(' › ');
+
+  const schema = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": h1,
+    "provider": { "@type": "Organization", "@id": `${SITE_URL}/#organization` },
+    "areaServed": city?.name || location?.name || (region === 'india' ? 'India' : region === 'canada' ? 'Canada' : 'United States'),
+    "url": canonical,
+    "description": `${service.summary}${industry ? ' For '+industry.name+'.' : ''}`
+  });
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>${esc(title)}</title>
+<meta name="description" content="${esc(service.summary)}${industry ? ' For '+esc(industry.name)+'.' : ''}${locationLabel ? ' Serving'+esc(locationLabel)+'.' : ''}"/>
+<link rel="canonical" href="${canonical}"/>
+<script type="application/ld+json">${schema}</script>
+<style>${STYLE}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+${regionNav(prefix ? '/'+prefix : '')}
+<main id="main">
+<div class="wrap">
+  <nav class="breadcrumbs" aria-label="Breadcrumb">${breadcrumbs}</nav>
+  <section class="hero">
+    <h1>${esc(h1)}</h1>
+    <p>${esc(service.summary)}${industry ? ' Built for '+esc(industry.name)+' businesses.' : ''}</p>
+    <div class="badges">
+      <span class="badge">⭐ ${BUSINESS.ratingValue} Google Rating</span>
+      <span class="badge">✅ ${BUSINESS.clientsServed} Clients</span>
+      <span class="badge">📅 ${BUSINESS.yearsInBusiness} Experience</span>
+      <span class="badge">🎯 Free Audit</span>
+    </div>
+  </section>
+  <section class="section">
+    <h2>Why Choose Perfoptim for ${esc(service.name)}?</h2>
+    <div class="grid grid-2">
+      <div class="card"><h3>📊 Performance-First</h3><p>Every campaign tied to measurable revenue goals — not vanity metrics.</p></div>
+      <div class="card"><h3>🔍 Deep Expertise</h3><p>${esc(service.summary)}</p></div>
+      <div class="card"><h3>📍 Local Knowledge</h3><p>We understand${locationLabel ? esc(locationLabel)+' market dynamics' : ' your target market'} inside out.</p></div>
+      <div class="card"><h3>🤝 Transparent Reporting</h3><p>Monthly reports with clear KPIs. No jargon. Just results.</p></div>
+    </div>
+  </section>
+  ${relatedEntities.length ? `<section class="section"><p class="kicker">Related Concepts</p><p>${entityLinks}</p></section>` : ''}
+  <section class="section cta card">
+    <h2>Get a Free ${esc(service.name)} Audit</h2>
+    <p>We'll review your setup and show exactly what's needed to grow${locationLabel ? esc(locationLabel) : ''}.</p>
+    <p><a href="mailto:${BUSINESS.email}">📧 ${BUSINESS.email}</a> &nbsp;|&nbsp; <a href="tel:${BUSINESS.phoneIndia}">📞 ${BUSINESS.phoneIndia}</a></p>
+  </section>
+</div>
+</main>
+${footerHtml()}
+</body>
+</html>`;
+}
+
+function buildUSA() {
+  console.log('\n🇺🇸 Building USA pages...');
+  CORE_SERVICES.forEach(service => {
+    writeFile(toFile([service.slug]), generateServicePage({ service }));
+    addSitemap('usa', [service.slug], '0.9');
+  });
+  CORE_SERVICES.forEach(service => {
+    CORE_INDUSTRIES.forEach(industry => {
+      writeFile(toFile([`${service.slug}-for-${industry.slug}`]), generateServicePage({ service, industry }));
+      addSitemap('usa', [`${service.slug}-for-${industry.slug}`], '0.85');
+    });
+  });
+  USA_LOCATIONS.forEach(state => {
+    CORE_SERVICES.forEach(service => {
+      writeFile(toFile([state.slug, service.slug]), generateServicePage({ service, location: state }));
+      addSitemap('usa', [state.slug, service.slug], '0.75');
+    });
+    USA_PRIORITY_COMBOS.forEach(([sS, iS]) => {
+      const sv = CORE_SERVICES.find(s => s.slug === sS), ind = CORE_INDUSTRIES.find(i => i.slug === iS);
+      if (!sv || !ind) return;
+      writeFile(toFile([state.slug, `${sS}-for-${iS}`]), generateServicePage({ service: sv, industry: ind, location: state }));
+      addSitemap('usa', [state.slug, `${sS}-for-${iS}`], '0.85');
+    });
+    state.cities.forEach(city => {
+      CORE_SERVICES.forEach(service => {
+        writeFile(toFile([state.slug, city.slug, service.slug]), generateServicePage({ service, location: state, city }));
+        addSitemap('usa', [state.slug, city.slug, service.slug], '0.75');
+      });
+      USA_PRIORITY_COMBOS.forEach(([sS, iS]) => {
+        const sv = CORE_SERVICES.find(s => s.slug === sS), ind = CORE_INDUSTRIES.find(i => i.slug === iS);
+        if (!sv || !ind) return;
+        writeFile(toFile([state.slug, city.slug, `${sS}-for-${iS}`]), generateServicePage({ service: sv, industry: ind, location: state, city }));
+        addSitemap('usa', [state.slug, city.slug, `${sS}-for-${iS}`], '0.85');
+      });
+    });
+  });
+  console.log(`  ✅ USA done. URLs: ${sitemaps.usa.length}`);
+}
+
+function buildIndia() {
+  console.log('\n🇮🇳 Building India pages...');
+  const iSvcs = [...CORE_SERVICES, ...INDIA_EXTRA_SERVICES];
+  const iInds = [...CORE_INDUSTRIES, ...INDIA_EXTRA_INDUSTRIES];
+  const p = 'in';
+  iSvcs.forEach(service => {
+    writeFile(toFile([p, 'services', service.slug]), generateServicePage({ service, prefix: p, region: 'india' }));
+    addSitemap('india', [p, 'services', service.slug], '0.9');
+  });
+  iSvcs.forEach(service => {
+    iInds.forEach(industry => {
+      writeFile(toFile([p, `${service.slug}-for-${industry.slug}`]), generateServicePage({ service, industry, prefix: p, region: 'india' }));
+      addSitemap('india', [p, `${service.slug}-for-${industry.slug}`], '0.85');
+    });
+  });
+  INDIA_LOCATIONS.forEach(state => {
+    iSvcs.forEach(service => {
+      writeFile(toFile([p, state.slug, service.slug]), generateServicePage({ service, location: state, prefix: p, region: 'india' }));
+      addSitemap('india', [p, state.slug, service.slug], '0.75');
+    });
+    INDIA_PRIORITY_COMBOS.forEach(([sS, iS]) => {
+      const sv = iSvcs.find(s => s.slug === sS), ind = iInds.find(i => i.slug === iS);
+      if (!sv || !ind) return;
+      writeFile(toFile([p, state.slug, `${sS}-for-${iS}`]), generateServicePage({ service: sv, industry: ind, location: state, prefix: p, region: 'india' }));
+      addSitemap('india', [p, state.slug, `${sS}-for-${iS}`], '0.85');
+    });
+    state.cities.forEach(city => {
+      iSvcs.forEach(service => {
+        writeFile(toFile([p, state.slug, city.slug, service.slug]), generateServicePage({ service, location: state, city, prefix: p, region: 'india' }));
+        addSitemap('india', [p, state.slug, city.slug, service.slug], '0.75');
+      });
+      INDIA_PRIORITY_COMBOS.forEach(([sS, iS]) => {
+        const sv = iSvcs.find(s => s.slug === sS), ind = iInds.find(i => i.slug === iS);
+        if (!sv || !ind) return;
+        writeFile(toFile([p, state.slug, city.slug, `${sS}-for-${iS}`]), generateServicePage({ service: sv, industry: ind, location: state, city, prefix: p, region: 'india' }));
+        addSitemap('india', [p, state.slug, city.slug, `${sS}-for-${iS}`], '0.85');
+      });
+    });
+  });
+  console.log(`  ✅ India done. URLs: ${sitemaps.india.length}`);
+}
+
+function buildCanada() {
+  console.log('\n🇨🇦 Building Canada pages...');
+  const cSvcs = [...CORE_SERVICES, ...CANADA_EXTRA_SERVICES];
+  const cInds = [...CORE_INDUSTRIES, ...CANADA_EXTRA_INDUSTRIES];
+  const p = 'ca';
+  cSvcs.forEach(service => {
+    writeFile(toFile([p, 'services', service.slug]), generateServicePage({ service, prefix: p, region: 'canada' }));
+    addSitemap('canada', [p, 'services', service.slug], '0.9');
+  });
+  cSvcs.forEach(service => {
+    cInds.forEach(industry => {
+      writeFile(toFile([p, `${service.slug}-for-${industry.slug}`]), generateServicePage({ service, industry, prefix: p, region: 'canada' }));
+      addSitemap('canada', [p, `${service.slug}-for-${industry.slug}`], '0.85');
+    });
+  });
+  CANADA_LOCATIONS.forEach(province => {
+    cSvcs.forEach(service => {
+      writeFile(toFile([p, province.slug, service.slug]), generateServicePage({ service, location: province, prefix: p, region: 'canada' }));
+      addSitemap('canada', [p, province.slug, service.slug], '0.75');
+    });
+    CANADA_PRIORITY_COMBOS.forEach(([sS, iS]) => {
+      const sv = cSvcs.find(s => s.slug === sS), ind = cInds.find(i => i.slug === iS);
+      if (!sv || !ind) return;
+      writeFile(toFile([p, province.slug, `${sS}-for-${iS}`]), generateServicePage({ service: sv, industry: ind, location: province, prefix: p, region: 'canada' }));
+      addSitemap('canada', [p, province.slug, `${sS}-for-${iS}`], '0.85');
+    });
+    province.cities.forEach(city => {
+      cSvcs.forEach(service => {
+        writeFile(toFile([p, province.slug, city.slug, service.slug]), generateServicePage({ service, location: province, city, prefix: p, region: 'canada' }));
+        addSitemap('canada', [p, province.slug, city.slug, service.slug], '0.75');
+      });
+      CANADA_PRIORITY_COMBOS.forEach(([sS, iS]) => {
+        const sv = cSvcs.find(s => s.slug === sS), ind = cInds.find(i => i.slug === iS);
+        if (!sv || !ind) return;
+        writeFile(toFile([p, province.slug, city.slug, `${sS}-for-${iS}`]), generateServicePage({ service: sv, industry: ind, location: province, city, prefix: p, region: 'canada' }));
+        addSitemap('canada', [p, province.slug, city.slug, `${sS}-for-${iS}`], '0.85');
+      });
+    });
+  });
+  console.log(`  ✅ Canada done. URLs: ${sitemaps.canada.length}`);
+}
+
+// ════════════════════  ENTRY POINT  ════════════════════
+
 console.log('╔══════════════════════════════════════════════════╗');
 console.log('║  PERFOPTIM — MASTER PROGRAMMATIC SEO GENERATOR  ║');
 console.log('║  USA + India + Canada + Entity + Wiki            ║');
 console.log('╚══════════════════════════════════════════════════╝');
 
 const startTime = Date.now();
-
-// Shared entity + wiki sitemap
 const sitemapShared = [];
 
 if (RUN_USA)    buildUSA();
 if (RUN_INDIA)  buildIndia();
 if (RUN_CANADA) buildCanada();
 
-// Entity + Wiki always build (shared across all regions)
 buildEntityPages(sitemapShared);
 buildWikiPages(sitemapShared);
-
-// Write shared sitemap
-fs.writeFileSync(
-  './sitemap-entity-wiki.xml',
-  buildSitemapXml(sitemapShared, 'https://perfoptim.com'),
-  'utf8'
-);
-entries.push(`  <sitemap><loc>https://perfoptim.com/sitemap-entity-wiki.xml</loc><lastmod>2026-06-24</lastmod></sitemap>`);
-buildSitemapIndex();
+buildSitemapIndex(sitemaps.usa, sitemaps.india, sitemaps.canada, sitemapShared);
 
 const secs = ((Date.now() - startTime) / 1000).toFixed(1);
 console.log('\n╔══════════════════════════════════════════════════╗');
 console.log(`║  ✅ BUILD COMPLETE in ${secs}s`);
 console.log(`║  📄 Total pages: ${totalPages.toLocaleString()}`);
-console.log(`║  🇺🇸  USA URLs:    ${sitemapUSA.length}`);
-console.log(`║  🇮🇳  India URLs:  ${sitemapIndia.length}`);
-console.log(`║  🇨🇦  Canada URLs: ${sitemapCanada.length}`);
-console.log(`║  📚 Entity URLs:  ${ENTITY_CONCEPTS.length + 1}`);
-console.log(`║  👤 Wiki URLs:    ${WIKI_PEOPLE.length + 1}`);
+console.log(`║  🇺🇸  USA:    ${sitemaps.usa.length} URLs`);
+console.log(`║  🇮🇳  India:  ${sitemaps.india.length} URLs`);
+console.log(`║  🇨🇦  Canada: ${sitemaps.canada.length} URLs`);
+console.log(`║  📚 Entity+Wiki: ${sitemapShared.length} URLs`);
 console.log('╚══════════════════════════════════════════════════╝');
