@@ -2,4 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /assets/drafts/
 
+Sitemap: https://perfoptim.com/sitemap-index.xml
 Sitemap: https://perfoptim.com/sitemap.xml
+Sitemap: https://perfoptim.com/in/sitemap.xml

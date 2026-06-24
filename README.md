@@ -87,3 +87,39 @@ Served with `http-server` on port 3000 via PM2 (`ecosystem.config.cjs`).
 - Replace placehold.co images and `assets/logo.png` with real brand assets
 - Add individual blog post pages and service+industry combo landing pages
 - Add Canada `/ca/` and Gulf `/gulf/` market homepages (nav links already stubbed)
+
+## India Market (/in/) — Programmatic SEO
+
+PerfOptim now serves the India market under `/in/` with **654 pages**.
+
+### Generation
+- `node generate-india.js` — generates 648 pSEO pages + `in/sitemap.xml`
+- `node build/build-bareilly.js` — 5 hand-written Bareilly pages (1,200–1,600 words each)
+- `node build/build-india-home.js` — rebuilds `in/index.html`
+
+### Page Tiers
+- **T1** Service root: `/in/services/{service}/` (15 services)
+- **T2** Service+Industry national: `/in/{service}-for-{industry}/`
+- **T3** Service+State: `/in/{state}/{service}/` (15 states × 6 services)
+- **T4** Service+Industry+State: `/in/{state}/{service}-for-{industry}/` (15 priority combos)
+- **T5** Service+City: `/in/{state}/{city}/{service}/` (top 4 cities/state × 4 services)
+- **T6** Service+Industry+City: `/in/{state}/{city}/{service}-for-{industry}/` (priority combos, top 3 cities)
+- Industry hubs: `/in/industries/{slug}/` (19 industries)
+- Blog: `/in/blog/{slug}/` (15 posts)
+
+### Data
+- `data/india/services-in.js` — 12 US + 3 India services (WhatsApp, GMB SEO, Influencer)
+- `data/india/industries-in.js` — 11 US + 8 India industries
+- `data/india/locations-in.js` — 15 states, 71 cities
+- `data/india/blog-in.js` — 15 blog posts
+- `data/services.js`, `data/industries.js` — rich-object adapters over `build/generate.js`
+
+### India Features
+- 6 H1 patterns by page tier; ₹8k/₹18k/₹35k+ pricing strip
+- City context + nearby-cities sections; Hindi subtitle for UP/Delhi/Rajasthan/MP/Haryana
+- WhatsApp CTA (#25D366) + floating WhatsApp button (wa.me)
+- India trust signals; LocalBusiness/Service/FAQ/Breadcrumb schema; hreflang en-US/en-IN/x-default
+- Bareilly HQ spotlight (Civil Lines, Subhash Nagar, CBD, Rohilkhand)
+
+### Sitemaps
+- `sitemap-index.xml` → `sitemap.xml` (US) + `in/sitemap.xml` (India, 652 URLs)
