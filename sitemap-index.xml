@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <sitemap>
-    <loc>https://perfoptim.com/sitemap.xml</loc>
-    <lastmod>2026-06-19</lastmod>
-  </sitemap>
-  <sitemap>
-    <loc>https://perfoptim.com/in/sitemap.xml</loc>
-    <lastmod>2026-06-19</lastmod>
-  </sitemap>
+  <sitemap><loc>https://perfoptim.com/sitemap-usa.xml</loc><lastmod>2026-06-24</lastmod></sitemap>
+  <sitemap><loc>https://perfoptim.com/in/sitemap.xml</loc><lastmod>2026-06-24</lastmod></sitemap>
+  <sitemap><loc>https://perfoptim.com/ca/sitemap.xml</loc><lastmod>2026-06-24</lastmod></sitemap>
 </sitemapindex>
