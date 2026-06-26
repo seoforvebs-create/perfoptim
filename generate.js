@@ -1533,8 +1533,9 @@ ${footerHtml()}
 function buildUSA() {
   console.log('\n🇺🇸 Building USA pages...');
   CORE_SERVICES.forEach(service => {
-    writeFile(toFile([service.slug]), generateServicePage({ service }));
-    addSitemap('usa', [service.slug], '0.9');
+// Tier 1 root service pages REMOVED — these live in /services/{slug}.html
+// writeFile(toFile([service.slug]), generateServicePage({ service }));
+// addSitemap('usa', [service.slug], '0.9');
   });
   CORE_SERVICES.forEach(service => {
     CORE_INDUSTRIES.forEach(industry => {
